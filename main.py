@@ -33,7 +33,7 @@ def getVideoName(url=''):
     return str(video_title)
 
 
-def downloader(url='', videoName='video.mp4'):
+def downloader(url: str, videoName='video.mp4'):
     print(colored('[!] Start download video', 'green'))
     try:
         video = YouTube(url)
@@ -66,7 +66,7 @@ def downloader(url='', videoName='video.mp4'):
         print(colored(f"[-] Произошла ошибка при скачивании видео: {ex}", 'red'))
 
 
-def downloader(urls=[]):
+def downloaders(urls=[]):
     for url in urls:
         videoName = getVideoName(url=url)
         print(colored('[!] Start download video', 'green'))
@@ -120,7 +120,7 @@ def bigstart():
     print(colored('URLs:', 'green'), colored(f'{urls}', 'yellow'))
     print(colored('Имя каждего URLs:', 'green'), colored('Будут заданы автоматически', 'yellow'))
     print()
-    downloader(urls=urls)
+    downloaders(urls=urls)
     print('-' * 20, colored('[@] [F.I.N.I.S.H]', 'yellow'), '-' * 20)
 
 
