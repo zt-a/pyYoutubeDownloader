@@ -1,0 +1,17 @@
+#!bin/bash
+apt-get update
+apt-get upgrade
+apt-get install python python3
+echo 'Установлен python, python3'
+cd ../
+python3 -m venv venv
+echo 'Виртуальное окружение создано'
+cd venv/Scripts
+chmod+x activate
+./activate
+echo 'Виртуальное окружение активировано'
+cd ../..
+pip3 install -r requirement.txt
+echo 'Необходимые библиотеки установлены :)'
+echo 'Можете запускать файл main.py для скачивание видео с youtube(только с youtube)'
+echo 'Запуск: python3 main.py'
